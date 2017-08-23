@@ -1,4 +1,4 @@
-# HACKxSJTU_ChatAssistant
+# ChatAssistant
 ![Swift](https://img.shields.io/badge/Swift-3.0-orange.svg)
 ![Hex.pm](https://img.shields.io/hexpm/l/plug.svg)
 
