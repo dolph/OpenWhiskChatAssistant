@@ -7,8 +7,6 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		180404391EBDAC1A005844A4 /* OpenWhisk.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 180404381EBDAC1A005844A4 /* OpenWhisk.framework */; };
-		1804043A1EBDAC1A005844A4 /* OpenWhisk.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 180404381EBDAC1A005844A4 /* OpenWhisk.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		1804043D1EBDB297005844A4 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1804043C1EBDB297005844A4 /* Assets.xcassets */; };
 		1804043F1EBDD963005844A4 /* ChatDataSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1804043E1EBDD963005844A4 /* ChatDataSource.swift */; };
 		180404421EBDD98F005844A4 /* UserInfoSource.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180404411EBDD98F005844A4 /* UserInfoSource.swift */; };
@@ -54,7 +52,6 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
-				1804043A1EBDAC1A005844A4 /* OpenWhisk.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -62,7 +59,6 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		180404381EBDAC1A005844A4 /* OpenWhisk.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = OpenWhisk.framework; sourceTree = "<group>"; };
 		1804043C1EBDB297005844A4 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		1804043E1EBDD963005844A4 /* ChatDataSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ChatDataSource.swift; sourceTree = "<group>"; };
 		180404411EBDD98F005844A4 /* UserInfoSource.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = UserInfoSource.swift; sourceTree = "<group>"; };
@@ -95,7 +91,6 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				180404391EBDAC1A005844A4 /* OpenWhisk.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -140,7 +135,6 @@
 		18F0285D1EBCD40000652EFF = {
 			isa = PBXGroup;
 			children = (
-				180404381EBDAC1A005844A4 /* OpenWhisk.framework */,
 				18F028681EBCD40000652EFF /* ChatAssistant */,
 				18F0287F1EBCD40000652EFF /* ChatAssistantTests */,
 				18F0288A1EBCD40000652EFF /* ChatAssistantUITests */,
@@ -273,7 +267,7 @@
 				TargetAttributes = {
 					18F028651EBCD40000652EFF = {
 						CreatedOnToolsVersion = 8.2.1;
-						DevelopmentTeam = 439VMF6FQD;
+						DevelopmentTeam = 2V2JY869AN;
 						ProvisioningStyle = Automatic;
 					};
 					18F0287B1EBCD40000652EFF = {
@@ -507,7 +501,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 439VMF6FQD;
+				DEVELOPMENT_TEAM = 2V2JY869AN;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",
@@ -524,7 +518,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
-				DEVELOPMENT_TEAM = 439VMF6FQD;
+				DEVELOPMENT_TEAM = 2V2JY869AN;
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
 					"$(PROJECT_DIR)",

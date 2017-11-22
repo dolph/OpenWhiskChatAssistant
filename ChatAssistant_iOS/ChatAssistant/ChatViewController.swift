@@ -174,7 +174,7 @@ class ChatViewController:  UIViewController, ChatDataSource, UITextFieldDelegate
     
     func fetchData(input: String, Type:String) -> Void {
         //解析JSON信息
-        let url = "https://service.us.apiconnect.ibmcloud.com/gws/apigateway/api/6d42906167d017b9394c9de3b84bcdaaed75ba5bf40ad8db419de6e67a04271a/powerful/powerful"
+        let url = "https://service.us.apiconnect.ibmcloud.com/gws/apigateway/api/13e333c7ef2cf94893209dc64eb131541e8951945654428da87dd0ac7d295ef5/powerful/powerful"
         newInput = input.replacingOccurrences(of: " ", with: "+")
         let actualResult = url+"?text=%22"+newInput+"%22&type="+Type
         

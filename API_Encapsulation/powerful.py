@@ -66,8 +66,8 @@ def concepts2result(response):
 def main(args):
     natural_language_understanding = NaturalLanguageUnderstandingV1(
         version='2017-02-27',
-        username='3c7f46fd-5308-46db-b55a-502352b72261',
-        password='1EssQSp6Zaik')
+        username='ad4c2d53-164a-42b9-9ca9-ce80ff3f13ca',
+        password='6DeAx38CMwu3')
 
     features_list = [features.Categories(),
                      features.Concepts(),
