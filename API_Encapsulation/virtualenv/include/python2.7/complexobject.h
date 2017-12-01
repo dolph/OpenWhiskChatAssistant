@@ -40,7 +40,7 @@ real and imaginary parts.
 typedef struct {
     PyObject_HEAD
     Py_complex cval;
-} PyComplexObject;     
+} PyComplexObject;
 
 PyAPI_DATA(PyTypeObject) PyComplex_Type;
 

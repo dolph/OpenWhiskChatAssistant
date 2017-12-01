@@ -43,19 +43,19 @@ struct _mod {
                 struct {
                         asdl_seq *body;
                 } Module;
-                
+
                 struct {
                         asdl_seq *body;
                 } Interactive;
-                
+
                 struct {
                         expr_ty body;
                 } Expression;
-                
+
                 struct {
                         asdl_seq *body;
                 } Suite;
-                
+
         } v;
 };
 
@@ -75,110 +75,110 @@ struct _stmt {
                         asdl_seq *body;
                         asdl_seq *decorator_list;
                 } FunctionDef;
-                
+
                 struct {
                         identifier name;
                         asdl_seq *bases;
                         asdl_seq *body;
                         asdl_seq *decorator_list;
                 } ClassDef;
-                
+
                 struct {
                         expr_ty value;
                 } Return;
-                
+
                 struct {
                         asdl_seq *targets;
                 } Delete;
-                
+
                 struct {
                         asdl_seq *targets;
                         expr_ty value;
                 } Assign;
-                
+
                 struct {
                         expr_ty target;
                         operator_ty op;
                         expr_ty value;
                 } AugAssign;
-                
+
                 struct {
                         expr_ty dest;
                         asdl_seq *values;
                         bool nl;
                 } Print;
-                
+
                 struct {
                         expr_ty target;
                         expr_ty iter;
                         asdl_seq *body;
                         asdl_seq *orelse;
                 } For;
-                
+
                 struct {
                         expr_ty test;
                         asdl_seq *body;
                         asdl_seq *orelse;
                 } While;
-                
+
                 struct {
                         expr_ty test;
                         asdl_seq *body;
                         asdl_seq *orelse;
                 } If;
-                
+
                 struct {
                         expr_ty context_expr;
                         expr_ty optional_vars;
                         asdl_seq *body;
                 } With;
-                
+
                 struct {
                         expr_ty type;
                         expr_ty inst;
                         expr_ty tback;
                 } Raise;
-                
+
                 struct {
                         asdl_seq *body;
                         asdl_seq *handlers;
                         asdl_seq *orelse;
                 } TryExcept;
-                
+
                 struct {
                         asdl_seq *body;
                         asdl_seq *finalbody;
                 } TryFinally;
-                
+
                 struct {
                         expr_ty test;
                         expr_ty msg;
                 } Assert;
-                
+
                 struct {
                         asdl_seq *names;
                 } Import;
-                
+
                 struct {
                         identifier module;
                         asdl_seq *names;
                         int level;
                 } ImportFrom;
-                
+
                 struct {
                         expr_ty body;
                         expr_ty globals;
                         expr_ty locals;
                 } Exec;
-                
+
                 struct {
                         asdl_seq *names;
                 } Global;
-                
+
                 struct {
                         expr_ty value;
                 } Expr;
-                
+
         } v;
         int lineno;
         int col_offset;
@@ -197,69 +197,69 @@ struct _expr {
                         boolop_ty op;
                         asdl_seq *values;
                 } BoolOp;
-                
+
                 struct {
                         expr_ty left;
                         operator_ty op;
                         expr_ty right;
                 } BinOp;
-                
+
                 struct {
                         unaryop_ty op;
                         expr_ty operand;
                 } UnaryOp;
-                
+
                 struct {
                         arguments_ty args;
                         expr_ty body;
                 } Lambda;
-                
+
                 struct {
                         expr_ty test;
                         expr_ty body;
                         expr_ty orelse;
                 } IfExp;
-                
+
                 struct {
                         asdl_seq *keys;
                         asdl_seq *values;
                 } Dict;
-                
+
                 struct {
                         asdl_seq *elts;
                 } Set;
-                
+
                 struct {
                         expr_ty elt;
                         asdl_seq *generators;
                 } ListComp;
-                
+
                 struct {
                         expr_ty elt;
                         asdl_seq *generators;
                 } SetComp;
-                
+
                 struct {
                         expr_ty key;
                         expr_ty value;
                         asdl_seq *generators;
                 } DictComp;
-                
+
                 struct {
                         expr_ty elt;
                         asdl_seq *generators;
                 } GeneratorExp;
-                
+
                 struct {
                         expr_ty value;
                 } Yield;
-                
+
                 struct {
                         expr_ty left;
                         asdl_int_seq *ops;
                         asdl_seq *comparators;
                 } Compare;
-                
+
                 struct {
                         expr_ty func;
                         asdl_seq *args;
@@ -267,46 +267,46 @@ struct _expr {
                         expr_ty starargs;
                         expr_ty kwargs;
                 } Call;
-                
+
                 struct {
                         expr_ty value;
                 } Repr;
-                
+
                 struct {
                         object n;
                 } Num;
-                
+
                 struct {
                         string s;
                 } Str;
-                
+
                 struct {
                         expr_ty value;
                         identifier attr;
                         expr_context_ty ctx;
                 } Attribute;
-                
+
                 struct {
                         expr_ty value;
                         slice_ty slice;
                         expr_context_ty ctx;
                 } Subscript;
-                
+
                 struct {
                         identifier id;
                         expr_context_ty ctx;
                 } Name;
-                
+
                 struct {
                         asdl_seq *elts;
                         expr_context_ty ctx;
                 } List;
-                
+
                 struct {
                         asdl_seq *elts;
                         expr_context_ty ctx;
                 } Tuple;
-                
+
         } v;
         int lineno;
         int col_offset;
@@ -321,15 +321,15 @@ struct _slice {
                         expr_ty upper;
                         expr_ty step;
                 } Slice;
-                
+
                 struct {
                         asdl_seq *dims;
                 } ExtSlice;
-                
+
                 struct {
                         expr_ty value;
                 } Index;
-                
+
         } v;
 };
 
@@ -348,7 +348,7 @@ struct _excepthandler {
                         expr_ty name;
                         asdl_seq *body;
                 } ExceptHandler;
-                
+
         } v;
         int lineno;
         int col_offset;

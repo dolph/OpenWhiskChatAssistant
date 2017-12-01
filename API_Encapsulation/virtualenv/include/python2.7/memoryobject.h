@@ -16,16 +16,16 @@ PyAPI_DATA(PyTypeObject) PyMemoryView_Type;
 #define PyMemoryView_GET_BASE(op) (((PyMemoryViewObject *)(op))->view.obj)
 
 
-PyAPI_FUNC(PyObject *) PyMemoryView_GetContiguous(PyObject *base, 
-						  int buffertype, 
+PyAPI_FUNC(PyObject *) PyMemoryView_GetContiguous(PyObject *base,
+						  int buffertype,
 						  char fort);
 
     /* Return a contiguous chunk of memory representing the buffer
        from an object in a memory view object.  If a copy is made then the
-       base object for the memory view will be a *new* bytes object. 
-       
-       Otherwise, the base-object will be the object itself and no 
-       data-copying will be done. 
+       base object for the memory view will be a *new* bytes object.
+
+       Otherwise, the base-object will be the object itself and no
+       data-copying will be done.
 
        The buffertype argument can be PyBUF_READ, PyBUF_WRITE,
        PyBUF_SHADOW to determine whether the returned buffer
@@ -40,13 +40,13 @@ PyAPI_FUNC(PyObject *) PyMemoryView_GetContiguous(PyObject *base,
        the original object is writable and allows setting an
        exclusive write lock. If this is not allowed by the
        original object, then a BufferError is raised.
-       
+
        If the object is multi-dimensional and if fortran is 'F',
        the first dimension of the underlying array will vary the
        fastest in the buffer.  If fortran is 'C', then the last
        dimension will vary the fastest (C-style contiguous).  If
        fortran is 'A', then it does not matter and you will get
-       whatever the object decides is more efficient.  
+       whatever the object decides is more efficient.
 
        A new reference is returned that must be DECREF'd when finished.
     */
@@ -54,7 +54,7 @@ PyAPI_FUNC(PyObject *) PyMemoryView_GetContiguous(PyObject *base,
 PyAPI_FUNC(PyObject *) PyMemoryView_FromObject(PyObject *base);
 
 PyAPI_FUNC(PyObject *) PyMemoryView_FromBuffer(Py_buffer *info);
-    /* create new if bufptr is NULL 
+    /* create new if bufptr is NULL
         will be a new bytesobject in base */
 
 
