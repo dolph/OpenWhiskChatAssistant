@@ -15,7 +15,7 @@
 		180404491EBDDA61005844A4 /* TableHeaderViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180404481EBDDA61005844A4 /* TableHeaderViewCell.swift */; };
 		1804044B1EBDDA6D005844A4 /* TableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1804044A1EBDDA6D005844A4 /* TableViewCell.swift */; };
 		1804044D1EBDF904005844A4 /* PopoverViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1804044C1EBDF904005844A4 /* PopoverViewController.swift */; };
-		1804044F1EBE01E6005844A4 /* BluemixResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1804044E1EBE01E6005844A4 /* BluemixResultViewController.swift */; };
+		1804044F1EBE01E6005844A4 /* IBM CloudResultViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1804044E1EBE01E6005844A4 /* BluemixResultViewController.swift */; };
 		180404511EBE07CA005844A4 /* gestureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 180404501EBE07CA005844A4 /* gestureView.swift */; };
 		18F0286A1EBCD40000652EFF /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F028691EBCD40000652EFF /* AppDelegate.swift */; };
 		18F0286C1EBCD40000652EFF /* Message.swift in Sources */ = {isa = PBXBuildFile; fileRef = 18F0286B1EBCD40000652EFF /* Message.swift */; };
@@ -67,7 +67,7 @@
 		180404481EBDDA61005844A4 /* TableHeaderViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableHeaderViewCell.swift; sourceTree = "<group>"; };
 		1804044A1EBDDA6D005844A4 /* TableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = TableViewCell.swift; sourceTree = "<group>"; };
 		1804044C1EBDF904005844A4 /* PopoverViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PopoverViewController.swift; sourceTree = "<group>"; };
-		1804044E1EBE01E6005844A4 /* BluemixResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BluemixResultViewController.swift; sourceTree = "<group>"; };
+		1804044E1EBE01E6005844A4 /* IBM CloudResultViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BluemixResultViewController.swift; sourceTree = "<group>"; };
 		180404501EBE07CA005844A4 /* gestureView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = gestureView.swift; sourceTree = "<group>"; };
 		18F028661EBCD40000652EFF /* ChatAssistant.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ChatAssistant.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		18F028691EBCD40000652EFF /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -193,7 +193,7 @@
 			isa = PBXGroup;
 			children = (
 				18F028E01EBD534B00652EFF /* ChatViewController.swift */,
-				1804044E1EBE01E6005844A4 /* BluemixResultViewController.swift */,
+				1804044E1EBE01E6005844A4 /* IBM CloudResultViewController.swift */,
 			);
 			name = ChatView;
 			sourceTree = "<group>";
@@ -343,7 +343,7 @@
 				1804044D1EBDF904005844A4 /* PopoverViewController.swift in Sources */,
 				180404471EBDDA41005844A4 /* TableView.swift in Sources */,
 				1804043F1EBDD963005844A4 /* ChatDataSource.swift in Sources */,
-				1804044F1EBE01E6005844A4 /* BluemixResultViewController.swift in Sources */,
+				1804044F1EBE01E6005844A4 /* IBM CloudResultViewController.swift in Sources */,
 				1804044B1EBDDA6D005844A4 /* TableViewCell.swift in Sources */,
 				180404491EBDDA61005844A4 /* TableHeaderViewCell.swift in Sources */,
 				18F0286A1EBCD40000652EFF /* AppDelegate.swift in Sources */,

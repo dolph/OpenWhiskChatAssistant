@@ -26,14 +26,14 @@
                                     <rect key="frame" x="0.0" y="0.0" width="342" height="64"/>
                                     <autoresizingMask key="autoresizingMask"/>
                                     <subviews>
-                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="Bluemix" translatesAutoresizingMaskIntoConstraints="NO" id="R8O-5u-oU5">
+                                        <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="IBM Cloud" translatesAutoresizingMaskIntoConstraints="NO" id="R8O-5u-oU5">
                                             <rect key="frame" x="20" y="5" width="55" height="55"/>
                                             <constraints>
                                                 <constraint firstAttribute="height" constant="55" id="4x8-3h-tEz"/>
                                                 <constraint firstAttribute="width" constant="55" id="oaK-Ac-czU"/>
                                             </constraints>
                                         </imageView>
-                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I'm Bluemix" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="41h-jl-rXv">
+                                        <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="I'm IBM Cloud" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="41h-jl-rXv">
                                             <rect key="frame" x="83" y="5" width="243" height="23"/>
                                             <fontDescription key="fontDescription" name=".AppleSystemUIFont" family=".AppleSystemUIFont" pointSize="19"/>
                                             <nil key="textColor"/>
@@ -216,10 +216,10 @@
             </objects>
             <point key="canvasLocation" x="96.799999999999997" y="715.59220389805103"/>
         </scene>
-        <!--Bluemix Result View Controller-->
+        <!--IBM Cloud Result View Controller-->
         <scene sceneID="Hj9-35-6vk">
             <objects>
-                <viewController id="cHD-nk-uIU" customClass="BluemixResultViewController" customModule="ChatAssistant" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="cHD-nk-uIU" customClass="IBM CloudResultViewController" customModule="ChatAssistant" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="9At-KU-UY3"/>
                         <viewControllerLayoutGuide type="bottom" id="Z8M-IQ-cv2"/>
@@ -351,7 +351,7 @@
         </scene>
     </scenes>
     <resources>
-        <image name="Bluemix" width="310" height="310"/>
+        <image name="IBM Cloud" width="310" height="310"/>
         <image name="ToolViewEmotion" width="35" height="35"/>
         <image name="ToolViewInputVoice" width="35" height="35"/>
         <image name="TypeSelectorBtn_Black" width="35" height="35"/>

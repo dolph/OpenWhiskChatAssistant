@@ -272,7 +272,7 @@ class ChatViewController:  UIViewController, ChatDataSource, UITextFieldDelegate
         //创建一个重用的单元格
         self.tableView!.register(TableViewCell.self, forCellReuseIdentifier: "ChatCell")
         me = UserInfo(name:"Rickey" ,logo:("parrot"))
-        you  = UserInfo(name:"Bluemix", logo:("Bluemix"))
+        you  = UserInfo(name:"IBM Cloud", logo:("Bluemix"))
         
         let first =  MessageItem(body:"HACKxSJTU =.= Definitely crazy", user:me,  date:Date(timeIntervalSinceNow:0), mtype:.mine)
         
@@ -324,7 +324,7 @@ class ChatViewController:  UIViewController, ChatDataSource, UITextFieldDelegate
         if let identifier = segue.identifier {
             switch identifier {
             case "Search":
-                if let dtvc = segue.destination as? BluemixResultViewController{
+                if let dtvc = segue.destination as? IBM CloudResultViewController{
                     dtvc.text = textTemp
                     if let ppc = dtvc.popoverPresentationController {
                         ppc.delegate = self

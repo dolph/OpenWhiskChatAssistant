@@ -1,5 +1,5 @@
 //
-//  BluemixResultViewController.swift
+//  IBM CloudResultViewController.swift
 //  ChatAssistant
 //
 //  Created by apple on 06/05/2017.
@@ -8,7 +8,7 @@
 
 import UIKit
 
-class BluemixResultViewController: UIViewController {
+class IBM CloudResultViewController: UIViewController {
 
     var text = ""
     @IBOutlet weak var textView: UITextView!
