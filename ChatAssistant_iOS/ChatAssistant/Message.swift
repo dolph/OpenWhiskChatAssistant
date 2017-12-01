@@ -9,12 +9,12 @@
 import UIKit
 
 class Message {
-    
+
     //MARK: Properties
     var title:String
     var content:String
     var photo:UIImage?
-    
+
     init?(title:String,content:String,photo:UIImage?){
         self.title = title
         self.content = content

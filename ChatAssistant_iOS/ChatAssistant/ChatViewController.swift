@@ -12,11 +12,11 @@ import Foundation
 class ChatViewController:  UIViewController, ChatDataSource, UITextFieldDelegate, UIPopoverPresentationControllerDelegate {
 
     @IBOutlet weak var resultButton: UIBarButtonItem!
-    
+
     func changeButtonStyle(s: String){
         resultButton.title = s
     }
-    
+
     @IBOutlet weak var gestureView: UIView! {
         didSet{
             gestureView.addGestureRecognizer(UILongPressGestureRecognizer(target: gestureView, action: Selector(("gestureChangeButton:"))))
@@ -25,7 +25,7 @@ class ChatViewController:  UIViewController, ChatDataSource, UITextFieldDelegate
     @IBAction func sendButton(_ sender: UIButton) {
         sendMessage(text: "")
     }
-    
+
     var offset:Int = 53
     var textTemp = ""
     var newInput = ""
@@ -59,7 +59,7 @@ class ChatViewController:  UIViewController, ChatDataSource, UITextFieldDelegate
             setupSendBack()
         }
     }
-    
+
     var v = "" {
         didSet{
             offset += 1
@@ -70,16 +70,16 @@ class ChatViewController:  UIViewController, ChatDataSource, UITextFieldDelegate
     override func viewDidLoad() {
         super.viewDidLoad()
         self.navigationItem.title = "ChatView"
-        
+
         setupChatTable()
         setupSendBack()
-        
+
         let firstInput = "IBM is the greatest company in the world! Coding with OpenWhisk makes me excited."
-        
+
         textTemp = ""
         fetchData(input: firstInput, Type: "Entities")
         fetchData(input: firstInput, Type: "Emotion")
-        
+
         //runloop轮询接受消息
         DispatchQueue.global().async {
             // 非主线程不能使用 Timer.scheduledTimer进行初始化
@@ -88,7 +88,7 @@ class ChatViewController:  UIViewController, ChatDataSource, UITextFieldDelegate
             })
             RunLoop.main.add(timer, forMode: RunLoopMode.commonModes)
         }
-        
+
         //开启键盘监听
         //NotificationCenter.default.addObserver(self, selector: #selector(keyBoardWillShow(_:)), name: NSNotification.Name.UIKeyboardWillShow, object: nil)
         //NotificationCenter.default.addObserver(self, selector: #selector(keyBoardWillHide(_:)), name: NSNotification.Name.UIKeyboardWillHide, object: nil)
@@ -97,48 +97,48 @@ class ChatViewController:  UIViewController, ChatDataSource, UITextFieldDelegate
         //移除键盘通知
         //NotificationCenter.default.removeObserver(self)
     //}
-    
+
     func setupSendBack() {
         //创建消息框
         let screenWidth = UIScreen.main.bounds.width
         sendBackView = UIView(frame:CGRect(x: 0,y: self.view.frame.size.height - 56,width: screenWidth,height: 56))
-        
+
         sendBackView.backgroundColor=UIColor.white
         sendBackView.alpha=0.5
-        
+
         txtMsg = UITextField(frame:CGRect(x: 45,y: 10,width: screenWidth - 200,height: 30))
         txtMsg.backgroundColor = txtColor
         txtMsg.textColor=UIColor.black
         txtMsg.font=UIFont.boldSystemFont(ofSize: 12)
         txtMsg.layer.cornerRadius = 10.0
         txtMsg.returnKeyType = UIReturnKeyType.send
-        
+
         //Set the delegate so you can respond to user input
         txtMsg.delegate=self
         sendBackView.addSubview(txtMsg)
         self.view.addSubview(sendBackView)
     }
-    
+
     func setupSendBackTop(keyBoardHeight: CGFloat){
         let screenWidth = UIScreen.main.bounds.width
         sendBackView = UIView(frame:CGRect(x: 0,y: self.view.frame.size.height - 56 + keyBoardHeight ,width: screenWidth,height: 56))
-        
+
         sendBackView.backgroundColor=UIColor.white
         sendBackView.alpha=0.5
-        
+
         txtMsg = UITextField(frame:CGRect(x: 45,y: 10,width: screenWidth - 200,height: 30))
         txtMsg.backgroundColor = txtColor
         txtMsg.textColor=UIColor.black
         txtMsg.font=UIFont.boldSystemFont(ofSize: 12)
         txtMsg.layer.cornerRadius = 10.0
         txtMsg.returnKeyType = UIReturnKeyType.send
-        
+
         //Set the delegate so you can respond to user input
         txtMsg.delegate=self
         sendBackView.addSubview(txtMsg)
         self.view.addSubview(sendBackView)
     }
-    
+
     func fetchMessage(offset: String) -> Void
     {
         //获取消息
@@ -171,13 +171,13 @@ class ChatViewController:  UIViewController, ChatDataSource, UITextFieldDelegate
             }
         }
     }
-    
+
     func fetchData(input: String, Type:String) -> Void {
         //解析JSON信息
         let url = "https://service.us.apiconnect.ibmcloud.com/gws/apigateway/api/13e333c7ef2cf94893209dc64eb131541e8951945654428da87dd0ac7d295ef5/powerful/powerful"
         newInput = input.replacingOccurrences(of: " ", with: "+")
         let actualResult = url+"?text=%22"+newInput+"%22&type="+Type
-        
+
         //多线程处理
         DispatchQueue.global().async{ ()-> Void in
             let parseData = self.parseJSON(inputData: self.getJSON(urlToRequest: actualResult))
@@ -210,7 +210,7 @@ class ChatViewController:  UIViewController, ChatDataSource, UITextFieldDelegate
             }
         }
     }
-    
+
     //解析JSON信息
     func getJSON(urlToRequest:String) -> NSData
     {
@@ -220,13 +220,13 @@ class ChatViewController:  UIViewController, ChatDataSource, UITextFieldDelegate
         let dictData = (try! JSONSerialization.jsonObject(with: inputData as Data, options: .mutableContainers)) as! NSDictionary
         return dictData
     }
-    
+
     func textFieldShouldReturn(_ textField:UITextField) -> Bool
     {
         sendMessage(text: "")
         return true
     }
-    
+
     func sendMessage(text: String)
     {
         if text == "" {
@@ -234,15 +234,15 @@ class ChatViewController:  UIViewController, ChatDataSource, UITextFieldDelegate
                 let thisChat =  MessageItem(body:sender.text! as NSString, user:me, date:Date(), mtype:ChatType.mine)
                 let thatChat =  MessageItem(body:"\(sender.text!)" as NSString, user:you, date:Date(), mtype:ChatType.someone)
                 newInput = sender.text!
-                
+
                 Chats.add(thisChat)
                 Chats.add(thatChat)
                 self.tableView.chatDataSource = self
                 self.tableView.reloadData()
-                
+
                 sender.resignFirstResponder()
                 sender.text = ""
-                
+
                 textTemp = ""
                 fetchData(input: newInput, Type: "Entities")
                 fetchData(input: newInput, Type: "Emotion")
@@ -253,53 +253,53 @@ class ChatViewController:  UIViewController, ChatDataSource, UITextFieldDelegate
             let thisChat =  MessageItem(body: tx as NSString, user:me, date:Date(), mtype:ChatType.mine)
             let thatChat =  MessageItem(body:"\(tx)" as NSString, user:you, date:Date(), mtype:ChatType.someone)
             newInput = text
-            
+
             Chats.add(thisChat)
             Chats.add(thatChat)
             self.tableView.chatDataSource = self
             self.tableView.reloadData()
-            
+
             textTemp = ""
             fetchData(input: newInput, Type: "Entities")
             fetchData(input: newInput, Type: "Emotion")
     }
 }
-    
+
     func setupChatTable()
     {
         self.tableView = TableView(frame:CGRect(x: 0, y: 80, width: self.view.frame.size.width, height: self.view.frame.size.height - 76), style: .plain)
-        
+
         //创建一个重用的单元格
         self.tableView!.register(TableViewCell.self, forCellReuseIdentifier: "ChatCell")
         me = UserInfo(name:"Rickey" ,logo:("parrot"))
         you  = UserInfo(name:"Bluemix", logo:("Bluemix"))
-        
+
         let first =  MessageItem(body:"HACKxSJTU =.= Definitely crazy", user:me,  date:Date(timeIntervalSinceNow:0), mtype:.mine)
-        
+
         let zero =  MessageItem(body:"IBM is the greatest company in the world! Coding with OpenWhisk makes me excited.", user:you,  date:Date(timeIntervalSinceNow:0), mtype:.someone)
-        
+
         Chats = NSMutableArray()
         Chats.addObjects(from: [first, zero])
-        
+
         //set the chatDataSource
         self.tableView.chatDataSource = self
-        
+
         //call the reloadData, this is actually calling your override method
         self.tableView.reloadData()
-        
+
         self.view.addSubview(self.tableView)
     }
-    
+
     func rowsForChatTable(_ tableView:TableView) -> Int
     {
         return self.Chats.count
     }
-    
+
     func chatTableView(_ tableView:TableView, dataForRow row:Int) -> MessageItem
     {
         return Chats[row] as! MessageItem
     }
-    
+
     /*
     //键盘
     func keyBoardWillShow(_ notification: Notification){
@@ -309,7 +309,7 @@ class ChatViewController:  UIViewController, ChatDataSource, UITextFieldDelegate
         let kbRect = (kbInfo?[UIKeyboardFrameEndUserInfoKey] as! NSValue).cgRectValue
         //键盘的y偏移量
         let changeY = kbRect.origin.y - self.view.frame.size.height
-        
+
         print(changeY)
         sendBackView.removeFromSuperview()
         setupSendBackTop(keyBoardHeight: changeY)
@@ -319,7 +319,7 @@ class ChatViewController:  UIViewController, ChatDataSource, UITextFieldDelegate
         setupSendBack()
     }
     */
-    
+
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if let identifier = segue.identifier {
             switch identifier {
@@ -334,7 +334,7 @@ class ChatViewController:  UIViewController, ChatDataSource, UITextFieldDelegate
             }
         }
     }
-    
+
     func adaptivePresentationStyle(for controller: UIPresentationController) -> UIModalPresentationStyle {
         return UIModalPresentationStyle.none
     }

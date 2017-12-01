@@ -80,7 +80,7 @@ def main(args):
             features=Features(entities=EntitiesOptions(),emotion=EmotionOptions()))
     except WatsonException as ex:
         return {"NULL":"NULL"}
-    
+
     if(args.get("type", "Emotion")=="Emotion"):
         result = emotion2result(response)
         return result

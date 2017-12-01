@@ -79,14 +79,14 @@ def main(args):
                      features.Sentiment()]
     input_param_list = ['Categories', 'Concepts', 'Emotion', 'Entities', 'Keywords', 'MetaData', 'Relations', 'Sentiment']
     input_param = args.get("type", "Emotion")
-    
+
     response = natural_language_understanding.analyze(
         text = args.get("text", None),
         url = args.get("url", None),
         html = args.get("html", None),
-        
+
         features=[features_list[input_param_list.index(input_param)]])
-    
+
     if(args.get("type", "Emotion")=="Emotion"):
         result = emotion2result(response)
         return result

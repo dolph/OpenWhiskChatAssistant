@@ -41,9 +41,9 @@ AR=		ar
 RANLIB=		ranlib
 LIBTOOL=	$(CC) -dynamiclib -all_load $(CFLAGS)
 SVNVERSION=	svnversion $(srcdir)
-HGVERSION=	
-HGTAG=		
-HGBRANCH=	
+HGVERSION=
+HGTAG=
+HGBRANCH=
 
 GNULD=          no
 
@@ -75,10 +75,10 @@ CFLAGS=		$(BASECFLAGS) -arch x86_64 -arch i386 -g -Os -pipe -fno-common -fno-str
 # Both CPPFLAGS and LDFLAGS need to contain the shell's value for setup.py to
 # be able to build extension modules using the directories specified in the
 # environment variables
-CPPFLAGS=	-I. -IInclude -I$(srcdir)/Include 
+CPPFLAGS=	-I. -IInclude -I$(srcdir)/Include
 LDFLAGS=	-arch x86_64 -arch i386            -Wl,-F.
-LDLAST=		
-SGI_ABI=	
+LDLAST=
+SGI_ABI=
 CCSHARED=	-arch x86_64 -arch i386 -pipe
 LINKFORSHARED=	-u _PyMac_Error $(PYTHONFRAMEWORKINSTALLDIR)/Versions/$(VERSION)/$(PYTHONFRAMEWORK)
 ARFLAGS=	rc
@@ -92,7 +92,7 @@ PY_CFLAGS=	$(CFLAGS) $(CPPFLAGS) $(CFLAGSFORSHARED) -DPy_BUILD_CORE
 MACHDEP=	darwin
 
 # Multiarch directory (may be empty)
-MULTIARCH=	
+MULTIARCH=
 
 # Install prefix for architecture-independent files
 prefix=		/System/Library/Frameworks/Python.framework/Versions/2.7
@@ -126,7 +126,7 @@ LDCXXSHARED=	$(CXX) -bundle -undefined dynamic_lookup
 DESTSHARED=	$(BINLIBDEST)/lib-dynload
 
 # Executable suffix (.exe on Windows and Mac OS X)
-EXE=		
+EXE=
 BUILDEXE = .exe
 
 LIBPYTHON=	/Library/Python/$(VERSION)
@@ -177,15 +177,15 @@ DIST=		$(DISTFILES) $(DISTDIRS)
 
 LIBRARY=	libpython$(VERSION).a
 LDLIBRARY=      $(PYTHONFRAMEWORKDIR)/Versions/$(VERSION)/$(PYTHONFRAMEWORK)
-BLDLIBRARY=     
-DLLLIBRARY=	
-LDLIBRARYDIR=   
+BLDLIBRARY=
+DLLLIBRARY=
+LDLIBRARYDIR=
 INSTSONAME=	$(LDLIBRARY)
 
 
 LIBS=		-ldl  -framework CoreFoundation
-LIBM=		
-LIBC=		
+LIBM=
+LIBC=
 SYSLIBS=	$(LIBM) $(LIBC)
 SHLIBS=		$(LIBS)
 
@@ -194,7 +194,7 @@ DLINCLDIR=	.
 DYNLOADFILE=	dynload_shlib.o
 MACHDEP_OBJS=	Python/mactoolboxglue.o
 LIBOBJDIR=	Python/
-LIBOBJS=	
+LIBOBJS=
 UNICODE_OBJS=   Objects/unicodeobject.o Objects/unicodectype.o
 
 PYTHON=		python$(EXE)
@@ -205,8 +205,8 @@ _PYTHON_HOST_PLATFORM=
 HOST_GNU_TYPE=  x86_64-apple-darwin16.0
 
 # Tcl and Tk config info from --with-tcltk-includes and -libs options
-TCLTK_INCLUDES=	
-TCLTK_LIBS=	
+TCLTK_INCLUDES=
+TCLTK_LIBS=
 
 # The task to run while instrument when building the profile-opt target
 PROFILE_TASK=	$(srcdir)/Tools/pybench/pybench.py -n 2 --with-gc --with-syscheck
@@ -214,7 +214,7 @@ PROFILE_TASK=	$(srcdir)/Tools/pybench/pybench.py -n 2 --with-gc --with-syscheck
 
 # === Definitions added by makesetup ===
 
-LOCALMODLIBS=           
+LOCALMODLIBS=
 BASEMODLIBS=
 GLHACK=-Dclear=__GLclear
 PYTHONPATH=$(COREPYTHONPATH)
@@ -239,7 +239,7 @@ MODULE_OBJS=	\
 		Modules/gcmodule.o
 
 # Used of signalmodule.o is not available
-SIGNAL_OBJS=	
+SIGNAL_OBJS=
 
 
 ##########################################################################
@@ -249,7 +249,7 @@ GRAMMAR_C=	Python/graminit.c
 GRAMMAR_INPUT=	$(srcdir)/Grammar/Grammar
 
 
-LIBFFI_INCLUDEDIR=	
+LIBFFI_INCLUDEDIR=
 
 ##########################################################################
 # Parser
