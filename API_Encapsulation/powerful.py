@@ -135,7 +135,7 @@ def main(args):
         return {"NULL":"NULL"}
     return extractlist
 
-#print main({"text":"IBM is an American multinational technology company headquartered in New York, United States, with operations in over 170 countries.","type":"Entities"})
-#print main({"text":"The Nobel Prize in Physics 1921 was awarded to Albert Einstein.","type":"Entities"})
-print main({"text":"The Chinese Comac C919 airliner takes place.","type":"Concepts"})
+#print(main({"text":"IBM is an American multinational technology company headquartered in New York, United States, with operations in over 170 countries.","type":"Entities"}))
+#print(main({"text":"The Nobel Prize in Physics 1921 was awarded to Albert Einstein.","type":"Entities"}))
+print(main({"text":"The Chinese Comac C919 airliner takes place.","type":"Concepts"}))
 
