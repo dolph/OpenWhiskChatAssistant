@@ -17,7 +17,7 @@ extern PyObject *PyMac_OSErrException;		/* Exception for OSErr */
 PyObject *PyMac_GetOSErrException(void);	/* Initialize & return it */
 PyObject *PyErr_Mac(PyObject *, int);		/* Exception with a mac error */
 PyObject *PyMac_Error(OSErr);			/* Uses PyMac_GetOSErrException */
-#ifndef __LP64__ 
+#ifndef __LP64__
 extern OSErr PyMac_GetFullPathname(FSSpec *, char *, int); /* convert
 							      fsspec->path */
 #endif /* __LP64__ */

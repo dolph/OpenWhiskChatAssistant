@@ -11,7 +11,7 @@ import UIKit
 class PopoverViewController: UIViewController, UIPopoverPresentationControllerDelegate{
 
     @IBOutlet weak var textView: UITextView!
-    
+
     override var preferredContentSize: CGSize {
         get {
             if textView != nil && presentingViewController != nil {

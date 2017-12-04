@@ -26,7 +26,7 @@
 /* original file header comment follows: */
 
 /* C objects to be exported from one extension module to another.
- 
+
    C objects are used for communication between extension modules.
    They provide a way for an extension module to export a C interface
    to other extension modules, so that extension modules can use the
@@ -56,7 +56,7 @@ PyAPI_FUNC(PyObject *) PyCObject_FromVoidPtr(
 
 /* Create a PyCObject from a pointer to a C object, a description object,
    and an optional destructor function.  If the third argument is non-null,
-   then it will be called with the first and second arguments if and when 
+   then it will be called with the first and second arguments if and when
    the PyCObject is destroyed.
 */
 PyAPI_FUNC(PyObject *) PyCObject_FromVoidPtrAndDesc(

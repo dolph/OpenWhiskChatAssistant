@@ -79,14 +79,14 @@ def main(args):
                      features.Sentiment()]
     input_param_list = ['Categories', 'Concepts', 'Emotion', 'Entities', 'Keywords', 'MetaData', 'Relations', 'Sentiment']
     input_param = args.get("type", "Emotion")
-    
+
     response = natural_language_understanding.analyze(
         text = args.get("text", None),
         url = args.get("url", None),
         html = args.get("html", None),
-        
+
         features=[features_list[input_param_list.index(input_param)]])
-    
+
     if(args.get("type", "Emotion")=="Emotion"):
         result = emotion2result(response)
         return result
@@ -135,7 +135,7 @@ def main(args):
         return {"NULL":"NULL"}
     return extractlist
 
-#print main({"text":"IBM is an American multinational technology company headquartered in New York, United States, with operations in over 170 countries.","type":"Entities"})
-#print main({"text":"The Nobel Prize in Physics 1921 was awarded to Albert Einstein.","type":"Entities"})
-print main({"text":"The Chinese Comac C919 airliner takes place.","type":"Concepts"})
+#print(main({"text":"IBM is an American multinational technology company headquartered in New York, United States, with operations in over 170 countries.","type":"Entities"}))
+#print(main({"text":"The Nobel Prize in Physics 1921 was awarded to Albert Einstein.","type":"Entities"}))
+print(main({"text":"The Chinese Comac C919 airliner takes place.","type":"Concepts"}))
 

@@ -12,11 +12,11 @@ class IBM CloudResultViewController: UIViewController {
 
     var text = ""
     @IBOutlet weak var textView: UITextView!
-    
+
     override func viewWillAppear(_ animated: Bool) {
         textView.text = text
     }
-    
+
     override var preferredContentSize: CGSize {
         get {
             if textView != nil && presentingViewController != nil {
@@ -29,5 +29,5 @@ class IBM CloudResultViewController: UIViewController {
             super.preferredContentSize = newValue
         }
     }
-    
+
 }
